@@ -3,7 +3,9 @@ const app = express();
 const path = require('path');
 
 
-
+app.get('/api/notes', (req, res) => {
+    res.send('Hello!');
+  });
 
 
 
