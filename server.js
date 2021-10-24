@@ -41,6 +41,10 @@ app.get('/api/notes/:title', (req, res) => {
 //     res.json(req.query);
 // });
 
+app.get('/notes', function(req,res) {
+    res.sendFile(path.join(__dirname, "./public/notes.html"));
+});
+
 
 // POST routes to add new notes
 let globalData;
