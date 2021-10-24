@@ -64,6 +64,7 @@ app.post('/api/notes', (req, res) => {
     
   });
 
+// DELETE notes by ID
 
 
 app.listen(PORT, () => {
