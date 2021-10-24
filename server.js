@@ -60,9 +60,9 @@ const writeNote = (body) => {
 
 app.post('/api/notes', (req, res) => {
     // req.body is where our incoming content will be
-    //req.body.id = notes.length;
-    let reqBody = req.body;
     
+    let reqBody = req.body;
+    reqBody.id = notes.length;
     let body = new object(reqBody.id, reqBody.title, reqBody.text);
     console.log(body);
     writeNote(body);
