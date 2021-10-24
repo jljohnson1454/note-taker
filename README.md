@@ -30,11 +30,16 @@ Heroku URL: https://dashboard.heroku.com/apps/quiet-ridge-30059
 
 ## Usage
 
-![app image](/assets/images/passingtests.jpg)
+![app home image](/public/assets/images/noteshome.jpg)
+</br>
+![app add page](/public/assets/images/notesadd.jpg)
+
 
 ## Contributors
 Updated by Jacob Johnson
 </br>
+</br>
 Starter Code provided by UT Austin Boot Camp
+</br>
 </br>
 Received help from TA Ian Sears
