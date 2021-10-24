@@ -2,9 +2,7 @@ const express = require('express');
 const path = require('path');
 const fs = require('fs');
 
-
 const notes = require('./db/db.json');
-const routes = require('./routes/routes');
 
 const PORT = process.env.PORT || 3001;
 const app = express();
@@ -37,14 +35,10 @@ app.get('/api/notes/:title', (req, res) => {
     res.json(result);
   });
 
-// app.get('/api/query', (req, res) => {
-//     res.json(req.query);
-// });
-
+  // GET request to join the Notes.html
 app.get('/notes', function(req,res) {
     res.sendFile(path.join(__dirname, "./public/notes.html"));
 });
-
 
 // POST routes to add new notes
 let globalData;
@@ -59,40 +53,16 @@ const writeNote = (body) => {
     })
 };
 
-
-
-
 app.post('/api/notes', (req, res) => {
-    // req.body is where our incoming content will be
-    
+
     let reqBody = req.body;
     reqBody.id = notes.length;
     let body = new object(reqBody.id, reqBody.title, reqBody.text);
     console.log(body);
     writeNote(body);
-    // fs.readFile('./db/db.json','utf-8', (err, data) => {
-    //     console.log(data);
-    //     globalData = data;
-    //     console.log('working')})
-    
     res.json(globalData);
     
   });
-
-
-
-// app.post('/api/notes', (req, res) => {
-//     const newNote = req.body;
-  
-//     console.log(newNote);
-  
-//     notes.push(newNote);
-  
-//     res.json(newNote);
-//   });
-
-
-  // app.use('/api', routes);
 
 
 
