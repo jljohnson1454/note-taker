@@ -66,6 +66,12 @@ app.post('/api/notes', (req, res) => {
 
 // DELETE notes by ID
 
+app.delete('/api/notes/:id', function (req, res) {
+    notes.splice(req.params.id, 1);
+    updateDb();
+    res.send('Got a DELETE request at /user')
+  })
+
 
 app.listen(PORT, () => {
     console.log(`API server now on port ${PORT}!`);
